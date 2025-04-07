@@ -1,0 +1,49 @@
+<template>
+  <div class="flex gap-4 flex-col" v-show="downloadStore.show">
+    <!-- Download All Button -->
+    <div class="flex justify-center items-center gap-2">
+      <div @click="click" class="btn btn-accent">
+        {{ $t("downloader.all") }} ({{ listStore.rowData.length }})
+      </div>
+      <slot></slot>
+    </div>
+    
+    <!-- Download Path Setting (moved to top for visibility) -->
+    <download-path-setting></download-path-setting>
+    
+    <process></process>
+    <quality></quality>
+    
+    <div class="flex justify-center items-center gap-2 flex-wrap">
+      <div class="form-control flex-row">
+        <label class="label cursor-pointer gap-2">
+          <span class="label-text">
+            {{ $t("downloader.save_the_lyrics_file_separately") }}
+          </span>
+          <input
+            type="checkbox"
+            class="toggle toggle-accent"
+            v-model="downloadStore.saveLyric"
+          />
+        </label>
+      </div>
+      <anonymous></anonymous>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useListStore } from "../../stores/list";
+import { useDownloadStore } from "../../stores/download";
+import process from "./process.vue";
+import quality from "./quality.vue";
+import anonymous from "./anonymous.vue";
+import DownloadPathSetting from "./DownloadPathSetting.vue";
+
+const downloadStore = useDownloadStore();
+const listStore = useListStore();
+
+async function click() {
+  await listStore.downloadAll(downloadStore.process);
+}
+</script>
