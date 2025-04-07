@@ -23,31 +23,14 @@ npm run build
 ```bash
 # macOS
 npm run make:mac
-
-# Windows
-npm run make:win
-
-# Linux
-npm run make:linux
 ```
 
-## 项目结构
-
-- `src/` - 源代码目录
-  - `api/` - API接口
-  - `components/` - Vue组件
-  - `types/` - TypeScript类型定义
-  - `utils/` - 工具函数
-  - `locales/` - 国际化文件
-- `public/` - 静态资源
-- `resources/` - 应用资源
-- `main.cjs` - Electron主进程
-- `preload.cjs` - 预加载脚本
-- `vite.config.ts` - Vite配置
-- `forge.config.cjs` - Electron Forge配置
+## 下载
+[安装包]()
 
 ## 技术栈
 
+- Cursor
 - Electron
 - Vue 3
 - TypeScript
@@ -59,15 +42,3 @@ npm run make:linux
 
 MIT
 
-# Quick Start
-[开箱即用creamplayer-win32-x64.zip](https://github.com/Beadd/Creamplayer/releases)
-
-# FAQ
-> 有些MP3设备无法检测到内嵌的歌词的话可以请勾选单独下载歌词文件的选项试试
-
-> 如果一次加载过多的话可能会遭到网易云频率限制，可以加载一会停一会，或者明天再试
-
-> 后续会支持QQ音乐，并用nuxt重构，和加载过多的卡顿问题
-
-# Preview
-![](https://raw.githubusercontent.com/Beadd/Creamplayer/refs/heads/main/preview.png)
