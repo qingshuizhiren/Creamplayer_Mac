@@ -26,7 +26,7 @@ npm run make:mac
 ```
 
 ## 下载
-[安装包]()
+[安装包](https://github.com/qingshuizhiren/Creamplayer_Mac/releases/tag/music_download_mac)
 
 ## 技术栈
 
